@@ -1,28 +1,65 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header>
+      <div class="nav">
+        <img src="./assets/images/logo.png" />
+        <van-search v-model="value" placeholder="请输入搜索关键词" input-align="center" />
+      </div>
+    </header>
+
+    <router-view></router-view>
+
+    <van-tabbar v-model="active">
+      <van-tabbar-item to="/home" icon="wap-home-o">首页</van-tabbar-item>
+      <van-tabbar-item to="/cart" icon="cart-o" badge="5">购物车</van-tabbar-item>
+      <van-tabbar-item to="/user" icon="user-o">我的乐淘</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { Search, Tabbar, TabbarItem } from "vant";
 export default {
-  name: 'App',
+  data() {
+    return {
+      active: 0,
+      value: "",
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    "van-search": Search,
+    "van-tabbar": Tabbar,
+    "van-tabbar-item": TabbarItem,
+  },
+};
 </script>
 
-<style>
+<style lang="scss" scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  min-width: 320px;
+  max-width: 750px;
+  margin: auto;
+  padding-bottom: 50px;
+  header {
+    display: flex;
+    height: 54px;
+    .nav {
+      display: flex;
+      position: fixed;
+      background-color: #fff;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      z-index: 1;
+      padding: 2px;
+      img {
+        height: 44px;
+        margin-left: 6px;
+      }
+      .van-search {
+        flex: 1;
+      }
+    }
+  }
 }
 </style>
