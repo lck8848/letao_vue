@@ -2,7 +2,7 @@ var node_ssh, ssh, site_dir, static_dir, filename, path
 node_ssh = require('node-ssh')
 path = require('path')
 ssh = new node_ssh()
-site_dir = '/www/wwwroot/leotao.w0824.com'  // 改为自己站点部署目录
+site_dir = '/www/wwwroot/0828letao.com'  // 改为自己站点部署目录
 static_dir = './dist/'					// 指定上传静态目录中的文件
 ssh.connect({
   host: '47.106.36.197',

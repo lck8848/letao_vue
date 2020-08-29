@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getLunBoData = getLunBoData;
 exports.getRecommend = getRecommend;
+exports.getNewsListData = getNewsListData;
 
 var _config = _interopRequireDefault(require("./config.js"));
 
@@ -46,6 +47,30 @@ function getRecommend() {
         case 4:
         case "end":
           return _context2.stop();
+      }
+    }
+  });
+}
+
+function getNewsListData() {
+  var page,
+      pagesize,
+      _args3 = arguments;
+  return regeneratorRuntime.async(function getNewsListData$(_context3) {
+    while (1) {
+      switch (_context3.prev = _context3.next) {
+        case 0:
+          page = _args3.length > 0 && _args3[0] !== undefined ? _args3[0] : 1;
+          pagesize = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : 5;
+          _context3.next = 4;
+          return regeneratorRuntime.awrap(_config["default"].get("/getnewslist?page=".concat(page, "&pagesize=").concat(pagesize)));
+
+        case 4:
+          return _context3.abrupt("return", _context3.sent);
+
+        case 5:
+        case "end":
+          return _context3.stop();
       }
     }
   });

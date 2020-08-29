@@ -6,6 +6,8 @@ var _App = _interopRequireDefault(require("./App.vue"));
 
 var _index = _interopRequireDefault(require("./router/index.js"));
 
+require("@/util/filter.js");
+
 var _vant = require("vant");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

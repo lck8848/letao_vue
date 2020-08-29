@@ -58,11 +58,12 @@
 </template>
 
 <script>
-import { Swipe, SwipeItem, Grid, GridItem, Divider } from "vant";
+import { Swipe, SwipeItem, Grid, GridItem, Divider,Search } from "vant";
 import { getLunBoData, getRecommend } from "@/api/index.js";
 export default {
   data() {
     return {
+      value:"",
       lunboData: [],
       recommend: [],
     };
@@ -73,6 +74,7 @@ export default {
     "van-grid": Grid,
     "van-grid-item": GridItem,
     "van-divider": Divider,
+    "van-search":Search
   },
   methods: {
     async getLunbo() {
@@ -85,6 +87,7 @@ export default {
     },
   },
   created() {
+    this.$parent.showHeader();
     this.getLunbo();
     this.getRec();
   },
@@ -118,9 +121,9 @@ export default {
   }
   #goodlist {
     background-color: #eeeeee;
-    .van-divider{
-        margin: 0;
-        padding: 16px 0;
+    .van-divider {
+      margin: 0;
+      padding: 16px 0;
     }
     .goods {
       display: flex;
@@ -134,6 +137,7 @@ export default {
         justify-content: space-between;
         width: 46%;
         margin: 4px;
+        margin-top: 0;
         border-radius: 6px;
         background: #fff;
         overflow: hidden;
