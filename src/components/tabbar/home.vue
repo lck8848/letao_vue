@@ -6,7 +6,7 @@
       </van-swipe-item>
     </van-swipe>
     <van-grid square :border="false">
-      <van-grid-item>
+      <van-grid-item to="/goodslist">
         <img src="@/assets/images/menu10.png" />
         <div>数码电器</div>
       </van-grid-item>

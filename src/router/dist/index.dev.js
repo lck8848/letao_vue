@@ -17,6 +17,8 @@ var _user = _interopRequireDefault(require("@/components/tabbar/user.vue"));
 
 var _newslist = _interopRequireDefault(require("@/components/news/newslist.vue"));
 
+var _goodslist = _interopRequireDefault(require("@/components/goods/goodslist.vue"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 _vue["default"].use(_vueRouter["default"]);
@@ -40,7 +42,12 @@ var routes = [{
   component: _user["default"]
 }, {
   path: "/newslist",
+  name: 'newslist',
   component: _newslist["default"]
+}, {
+  path: "/goodslist",
+  name: 'goodslist',
+  component: _goodslist["default"]
 }];
 var router = new _vueRouter["default"]({
   routes: routes
