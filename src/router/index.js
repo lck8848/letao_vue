@@ -6,6 +6,7 @@ import home from '@/components/tabbar/home.vue'
 import cart from "@/components/tabbar/cart.vue";
 import user from "@/components/tabbar/user.vue";
 import newslist from "@/components/news/newslist.vue";
+import newsdetail from "@/components/news/newsdetail.vue";
 import goodslist from "@/components/goods/goodslist.vue";
 
 const routes = [{
@@ -30,6 +31,11 @@ const routes = [{
         path: "/newslist",
         name: 'newslist',
         component: newslist
+    },
+    {
+        path: "/newsdetail/:id",
+        component: newsdetail,
+        props: true
     },
     {
         path: "/goodslist",

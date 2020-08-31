@@ -3,7 +3,7 @@
     <van-loading v-if="isShow" :vertical="true" type="spinner" color="#ccc" size="30px">加载中...</van-loading>
     <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
       <div class="newslist">
-        <div class="item" v-for="item in newslist" :key="item.id">
+        <router-link :to="'/newsdetail/'+item.id" tag="div" class="item" v-for="item in newslist" :key="item.id">
           <div class="img_container">
             <img v-lazy="item.img_url" alt />
           </div>
@@ -14,7 +14,7 @@
               <span>点击次数：{{ item.click }}</span>
             </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </van-pull-refresh>
 

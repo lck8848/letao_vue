@@ -4,10 +4,12 @@ import router from './router/index.js'
 
 import '@/util/filter.js';
 
-import { Lazyload } from "vant";
+import { Lazyload,Toast } from "vant";
 Vue.use(Lazyload, {
   lazyComponent: true,
 });
+
+Vue.prototype.$toast = Toast;
 
 Vue.config.productionTip = false
 

@@ -1,6 +1,5 @@
 <template>
-  <div>
-  </div>
+  <div></div>
 </template>
 
 <script>
@@ -14,10 +13,9 @@ export default {
   components: {
     "van-nav-bar": NavBar,
   },
-  created(){
-      
-           this.$parent.showNavBar({title:"个人中心"})
-  }
+  created() {
+    this.$parent.showNavBar({ title: "个人中心" });
+  },
 };
 </script>
 
