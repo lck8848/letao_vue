@@ -14,7 +14,7 @@
         <img src="@/assets/images/menu19.png" />
         <div>乐淘头条</div>
       </van-grid-item>
-      <van-grid-item>
+      <van-grid-item to="/photo">
         <img src="@/assets/images/menu18.png" />
         <div>美图欣赏</div>
       </van-grid-item>

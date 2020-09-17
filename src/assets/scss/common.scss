@@ -1,0 +1,9 @@
+.overflow_ellipsis {
+    // 限制两行文本，超出显示省略号
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+  

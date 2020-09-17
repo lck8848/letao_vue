@@ -8,6 +8,14 @@ import user from "@/components/tabbar/user.vue";
 import newslist from "@/components/news/newslist.vue";
 import newsdetail from "@/components/news/newsdetail.vue";
 import goodslist from "@/components/goods/goodslist.vue";
+import goodsdetail from "@/components/goods/goodsdetail.vue";
+import photo from "@/components/photo/photo.vue";
+import login from '@/components/users/login.vue';
+import addressmanage from '@/components/address/addressmanage.vue'
+import addressadd from '@/components/address/addressadd.vue'
+import addressedit from '@/components/address/addressedit.vue'
+import order from '@/components/order/order.vue'
+import register from '@/components/users/register.vue';
 
 const routes = [{
         path: '/',
@@ -22,10 +30,11 @@ const routes = [{
         path: '/cart',
         name: 'cart',
         component: cart
-    }, {
-        path: '/user',
-        name: 'user',
-        component: user
+    },
+    {
+        path: '/user/:user_id',
+        component: user,
+        props: true
     },
     {
         path: "/newslist",
@@ -34,6 +43,7 @@ const routes = [{
     },
     {
         path: "/newsdetail/:id",
+        name: 'newsdetail',
         component: newsdetail,
         props: true
     },
@@ -41,7 +51,41 @@ const routes = [{
         path: "/goodslist",
         name: 'goodslist',
         component: goodslist
-    }
+    },
+    {
+        path: "/goodsdetail/:id",
+        component: goodsdetail,
+        props: true
+    },
+    {
+        path: "/photo",
+        name: 'photo',
+        component: photo
+    },
+    {
+        path: '/login',
+        component: login
+    },
+    {
+        path: '/register',
+        component: register
+    },
+    {
+        path: '/addressmanage',
+        component: addressmanage
+    },
+    {
+        path: '/addressadd',
+        component: addressadd
+    },
+    {
+        path: '/addressedit/:addressInfo',
+        component: addressedit
+    },
+    {
+        path: '/order',
+        component: order
+    },
 ]
 
 const router = new VueRouter({

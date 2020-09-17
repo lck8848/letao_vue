@@ -3,7 +3,7 @@
     <van-loading v-if="isShow" :vertical="true" type="spinner" color="#ccc" size="30px">加载中...</van-loading>
     <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
       <div class="goods">
-        <div class="item" v-for="item in goodslist" :key="item.id">
+        <router-link  tag="div" :to="'/goodsdetail/'+item.id" class="item" v-for="item in goodslist" :key="item.id">
           <img v-lazy="item.img_url" alt />
           <div class="text">
             <div class="title">{{ item.title }}</div>
@@ -18,7 +18,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </van-pull-refresh>
 

@@ -27,3 +27,63 @@ export  async  function getNewsCommentData(id,page){
 export  async  function postCommentData(id,content){
     return  await instance.post(`/postcomment/${id}`,{content});
 }
+
+export  async  function getPhotoCateData(){
+    return  await instance.get(`/getcategory`);
+}
+
+export  async  function getPhotoCateListData(id){
+    return  await instance.get(`/getcatelist/${id}`);
+}
+
+export  async  function getPhotoThumbData(id){
+    return  await instance.get(`/getthumbimages/${id}`);
+}
+
+export  async  function getGoodsInfoData(id){
+    return  await instance.get(`/getgoodsinfo/${id}`);
+}
+
+export  async  function getCarData(ids){
+    return  await instance.get(`/getshopcarlist/${ids}`);
+}
+
+export async function  userLogin (data) {
+    return await instance.post(`/login`,data)
+}
+
+export async function  isLogin () {
+    var token = localStorage.getItem('token')
+    try{
+        await instance.post(`/checktoken?token=${token}`)
+    }catch(e){
+
+    }
+}
+
+export async function  userAddressData (userid) {
+    return await instance.get(`/getaddress/${userid}?v=${Math.random()}`)
+}
+
+export async function  addUserAddressData (userid,addressInfo) {
+    return await instance.post(`/addaddress/${userid}`,addressInfo)
+}
+
+export async function  deleteUserAddressData (addessid) {
+    return await instance.post(`/deladdress/${addessid}`)
+}
+
+export async function  updateUserAddressData (addressid,addressInfo) {
+    return await instance.post(`/updateaddress/${addressid}`,addressInfo)
+}
+
+// 提交订单接口
+export async function  commitOrder (orderData) {
+    return await instance.post(`/commitorder`,orderData)
+}
+
+
+// 获取用户的订单数据
+export async function  userOrder (user_id) {
+    return await instance.post(`/userorder/${user_id}`)
+}
